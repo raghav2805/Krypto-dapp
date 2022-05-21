@@ -1,19 +1,30 @@
+const deepEqualInAnyOrder = require('deep-equal-in-any-order');
+const chai = require('chai');
+chai.use(deepEqualInAnyOrder);
+
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("Greeter", function () {
-  it("Should return the new greeting once it's changed", async function () {
-    const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
-    await greeter.deployed();
+describe("Testing Transaction contract", function () {
+  let addr1, addr2, signer;
 
-    expect(await greeter.greet()).to.equal("Hello, world!");
+  beforeEach("deploying Transaction", async () =>{
+    const transactionFactory = await ethers.getContractFactory("Transaction");
+    transaction = await transactionFactory.deploy();
+    await transaction.deployed();
 
-    const setGreetingTx = await greeter.setGreeting("Hola, mundo!");
+    [signer, addr1,addr2] = await ethers.getSigners();
 
-    // wait until the transaction is mined
-    await setGreetingTx.wait();
+  })
 
-    expect(await greeter.greet()).to.equal("Hola, mundo!");
+  it("Should return the transaction details", async function () {
+    expect(await transaction.getTransactionCount()).to.equal(0);
+    expect(await transaction.getAllTransactions()).to.deep.equal([]);
   });
+
+  it("should track all transction", async () =>{
+    await transaction.connect(addr1).addToBlockchain(addr2.address, 1,"Hey", "testing going on");
+    expect(await transaction.getTransactionCount()).to.equal(1);
+  });
+
 });

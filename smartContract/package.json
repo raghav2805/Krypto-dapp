@@ -7,5 +7,9 @@
     "ethereum-waffle": "^3.0.0",
     "ethers": "^5.0.0",
     "hardhat": "^2.9.0"
+  },
+  "dependencies": {
+    "deep-equal-in-any-order": "^1.1.18",
+    "dotenv": "^16.0.1"
   }
 }
