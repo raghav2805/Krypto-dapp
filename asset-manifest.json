@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Krypto-dapp/static/css/main.53b55eea.css",
+    "main.js": "/Krypto-dapp/static/js/main.bee81ab7.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/Krypto-dapp/static/js/787.c4e7f8f9.chunk.js",
+    "index.html": "/Krypto-dapp/index.html",
+    "main.53b55eea.css.map": "/Krypto-dapp/static/css/main.53b55eea.css.map",
+    "main.bee81ab7.js.map": "/Krypto-dapp/static/js/main.bee81ab7.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/Krypto-dapp/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53b55eea.css",
+    "static/js/main.bee81ab7.js"
+  ]
+}
