@@ -12,14 +12,14 @@ const Navbar = () =>{
 
     return (
         <>
-    <nav class="navbar">
-     <div class="logo">Krypto</div>
-     <ul class="nav-links">
+    <nav className="navbar">
+     <div className="logo">Krypto</div>
+     <ul className="nav-links">
       
        <input type="checkbox" id="checkbox_toggle" />
-       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+       <label for="checkbox_toggle" className="hamburger">&#9776;</label>
        
-       <div class="menu">
+       <div className="menu">
          <li><a href="/">Market</a></li>
          <li><a href="/">Exchange</a></li>
          <li><a href="/">Tutorials</a></li>

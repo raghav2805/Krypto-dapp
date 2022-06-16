@@ -5,7 +5,7 @@ require('dotenv').config()
 const Private_key = process.env.Private_key;
 
 module.exports = {
-  solidity: '0.8.0',
+  solidity: '0.8.11',
   networks: {
     ropsten: {
       url: "https://eth-ropsten.alchemyapi.io/v2/SGZwIG8GDtO8k7LLTHN_mvTXjabwpS22",

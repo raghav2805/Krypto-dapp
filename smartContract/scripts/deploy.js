@@ -6,6 +6,20 @@ const main = async () => {
   await transaction.deployed();
 
   console.log("transaction deployed to:", transaction.address);
+
+  const _rewardToken = await hre.ethers.getContractFactory("rewardToken");
+  const RewardToken = await _rewardToken.deploy();
+
+  await RewardToken.deployed();
+
+  console.log("RewardToken deployed to:", RewardToken.address);
+
+  const stacking = await hre.ethers.getContractFactory("stacking");
+  const Stacking = await stacking.deploy(RewardToken.address, RewardToken.address);
+
+  await Stacking.deployed();
+
+  console.log("Stacking deployed to:", Stacking.address);
 }
 
 const runMain = async () =>{
@@ -20,4 +34,6 @@ const runMain = async () =>{
 
 runMain();
 
-//0x8d7CD94462965c3F8B799215A3E69b7d16D83773
+// transaction deployed to: 0x6f354b48B120321c34F6b57240F316eb606B8FA5
+// RewardToken deployed to: 0xA14c53070b766795b0299EF2A22A3b2563571aB2
+// Stacking deployed to: 0x63c724BbD23E686c1395A92339da946F6e377a01
